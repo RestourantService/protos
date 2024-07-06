@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option go_package = "genproto/PaymentService";
+
+package Payment;
+
+service PaymentService {
+    
+}

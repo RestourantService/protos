@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "genproto/UserService";
+
+package User;
+
+service UserService {
+    rpc GetUser(GetUserRequest) returns (GetUserResponse);
+}
+
+message GetUserRequest {
+}
+
+message GetUserResponse {
+}

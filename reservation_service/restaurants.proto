@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option go_package = "genproto/restaurant";
+
+package restaurant;
+
+service Restaurant {
+    rpc CreateRestaurant (RestaurantDetails) returns (ID);
+    rpc GetRestaurantByID (ID) returns (RestaurantInfo);
+    rpc UpdateRestaurant (ID) returns (Void);
+    rpc DeleteRestaurant (ID) returns (Void);
+    rpc FetchRestaurants (Pagination) returns (Restaurants);
+}
+
+message RestaurantDetails {
+    string name = 1;
+    string address = 2;
+    string phone_number = 3;
+    string description = 4;
+}
+
+message RestaurantInfo {
+    string id = 1;
+    RestaurantDetails details = 2;
+}
+
+message ID {
+    string id = 1;
+}
+
+message Void {}
+
+message Pagination {
+    int32 limit = 1;
+    int32 offset = 2;
+}
+
+message Restaurants {
+    repeated RestaurantInfo restaurants = 1;
+}

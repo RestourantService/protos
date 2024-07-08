@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option go_package = "genproto/menu";
+
+package menu;
+
+service Menu {
+    rpc AddMeal (MealDetails) returns (ID);
+    rpc GetMealByID (ID) returns (MealInfo);
+    rpc UpdateMeal (ID) returns (Void);
+    rpc DeleteMeal (ID) returns (Void);
+    rpc FetchMeals (Filter) returns (Meals);
+}
+
+message MealDetails {
+    string restaurant_id = 1;
+    string name = 2;
+    string description = 3;
+    float price = 4;
+}
+
+message MealInfo {
+    string id = 1;
+    MealDetails details = 2;
+}
+
+message ID {
+    string id = 1;
+}
+
+message Void {}
+
+message Filter {
+    string restaurant_id = 1;
+    int32 limit = 2;
+    int32 offset = 3;
+}
+
+message Meals {
+    repeated MealInfo meals = 1;
+}

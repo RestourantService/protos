@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+option go_package = "genproto/reservation";
+
+package reservation;
+
+service Reservation {
+    rpc CreateReservation (ReservationDetails) returns (ID);
+    rpc GetReservationByID (ID) returns (ReservationInfo);
+    rpc UpdateReservation (ID) returns (Void);
+    rpc DeleteReservation (ID) returns (Void);
+    rpc ValidateReservation (ReservationDetails) returns (ID);
+    rpc Order (ReservationOrders) returns (ID);
+    rpc Pay (ID) returns (Status);
+    rpc FetchReservations (Filter) returns (Reservations);
+}
+
+message ReservationDetails {
+    string user_id = 1;
+    string reservation_id = 2;
+    string reservation_time = 3;
+}
+
+message ReservationInfo {
+    string id = 1;
+    ReservationDetails details = 2;
+    string status = 3;
+}
+
+message ID {
+    string id = 1;
+}
+
+message Void {}
+
+message ReservationOrders {
+    string reservation_id = 1;
+    string menu_item_id = 2;
+    int32 quantity = 3;
+}
+
+message Status {
+    bool successful = 1;
+}
+
+message Filter {
+    string user_id = 1;
+    string restaurant_id = 2;
+    int32 limit = 3;
+    int32 offset = 4;
+}
+
+message Reservations {
+    repeated ReservationInfo reservations = 1;
+}

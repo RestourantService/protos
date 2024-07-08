@@ -30,7 +30,7 @@ message LoginRequest {
 }
 
 message LogoutRequest {
-    string email = 1;
+    string username = 1;
 }
 
 message TokenRequest {

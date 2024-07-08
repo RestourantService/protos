@@ -7,7 +7,7 @@ package payment;
 service Payment {
     rpc MakePayment (PaymentDetails) returns (Status);
     rpc GetPayment (ID) returns (PaymentInfo);
-    rpc UpdatePayment (ID) returns (Void);
+    rpc UpdatePayment (PaymentInfo) returns (Void);
 }
 
 message PaymentDetails {

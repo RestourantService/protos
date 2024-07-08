@@ -6,7 +6,7 @@ package user;
 
 service User {
     rpc GetUser (ID) returns (UserInfo);
-    rpc UpdateUser (ID) returns (Void);
+    rpc UpdateUser (UserInfo) returns (Void);
     rpc DeleteUser (ID) returns (Void);
     rpc ValidateUser (ID) returns (Status);
 }

@@ -7,7 +7,7 @@ package menu;
 service Menu {
     rpc AddMeal (MealDetails) returns (ID);
     rpc GetMealByID (ID) returns (MealInfo);
-    rpc UpdateMeal (ID) returns (Void);
+    rpc UpdateMeal (MealInfo) returns (Void);
     rpc DeleteMeal (ID) returns (Void);
     rpc FetchMeals (Filter) returns (Meals);
 }

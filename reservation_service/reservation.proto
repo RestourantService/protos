@@ -7,7 +7,7 @@ package reservation;
 service Reservation {
     rpc CreateReservation (ReservationDetails) returns (ID);
     rpc GetReservationByID (ID) returns (ReservationInfo);
-    rpc UpdateReservation (ID) returns (Void);
+    rpc UpdateReservation (ReservationInfo) returns (Void);
     rpc DeleteReservation (ID) returns (Void);
     rpc ValidateReservation (ReservationDetails) returns (ID);
     rpc Order (ReservationOrders) returns (ID);

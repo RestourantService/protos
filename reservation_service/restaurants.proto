@@ -21,7 +21,10 @@ message RestaurantDetails {
 
 message RestaurantInfo {
     string id = 1;
-    RestaurantDetails details = 2;
+    string name = 2;
+    string address = 3;
+    string phone_number = 4;
+    string description = 5;
 }
 
 message ID {

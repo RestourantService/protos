@@ -23,8 +23,10 @@ message ReservationDetails {
 
 message ReservationInfo {
     string id = 1;
-    ReservationDetails details = 2;
-    string status = 3;
+    string user_id = 2;
+    string reservation_id = 3;
+    string reservation_time = 4;
+    string status = 5;
 }
 
 message ID {

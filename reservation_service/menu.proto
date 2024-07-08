@@ -21,7 +21,10 @@ message MealDetails {
 
 message MealInfo {
     string id = 1;
-    MealDetails details = 2;
+    string restaurant_id = 2;
+    string name = 3;
+    string description = 4;
+    float price = 5;
 }
 
 message ID {

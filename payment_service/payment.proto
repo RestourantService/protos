@@ -22,8 +22,10 @@ message Status {
 
 message PaymentInfo {
     string id = 1;
-    PaymentDetails details = 2;
-    string payment_status = 3;
+    string reservation_id = 2;
+    float amount = 3;
+    string payment_method = 4;
+    string payment_status = 5;
 }
 
 message ID {

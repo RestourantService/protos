@@ -19,7 +19,9 @@ message UserDetails {
 
 message UserInfo {
     string id = 1;
-    UserDetails details = 2;
+    string username = 2;
+    string email = 3;
+    string password = 4;
 }
 
 message LoginRequest {

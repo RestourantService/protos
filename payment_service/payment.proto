@@ -21,8 +21,9 @@ message Status {
 }
 
 message PaymentInfo {
-    PaymentDetails details = 1;
-    string payment_status = 2;
+    string id = 1;
+    PaymentDetails details = 2;
+    string payment_status = 3;
 }
 
 message ID {

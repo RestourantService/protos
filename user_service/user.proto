@@ -5,10 +5,6 @@ option go_package = "genproto/user";
 package user;
 
 service User {
-    rpc Register (UserInfo) returns (ID);
-    rpc Login (LoginRequest) returns (ID);
-    rpc Logout (LogoutRequest) returns (Void);
-    rpc RefreshToken (TokenRequest) returns (Void);
     rpc GetUser (ID) returns (UserInfo);
     rpc UpdateUser (ID) returns (Void);
     rpc DeleteUser (ID) returns (Void);
@@ -19,21 +15,6 @@ message UserInfo {
     string username = 1;
     string email = 2;
     string password = 3;
-}
-
-message LoginRequest {
-    string username = 1;
-    string password = 2;
-}
-
-message LogoutRequest {
-    string email = 1;
-}
-
-message TokenRequest {
-    string user_id = 1;
-    string token = 2; 
-    int64 expiresAt = 3;
 }
 
 message ID {

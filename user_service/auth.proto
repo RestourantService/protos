@@ -5,16 +5,21 @@ option go_package = "genproto/authentication";
 package authentication;
 
 service Authentication {
-    rpc Register (UserInfo) returns (ID);
+    rpc Register (UserDetails) returns (ID);
     rpc Login (LoginRequest) returns (ID);
     rpc Logout (LogoutRequest) returns (Void);
     rpc RefreshToken (TokenRequest) returns (Void);
 }
 
-message UserInfo {
+message UserDetails {
     string username = 1;
     string email = 2;
     string password = 3;
+}
+
+message UserInfo {
+    string id = 1;
+    UserDetails details = 2;
 }
 
 message LoginRequest {

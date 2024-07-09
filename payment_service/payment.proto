@@ -8,6 +8,7 @@ service Payment {
     rpc MakePayment (PaymentDetails) returns (Status);
     rpc GetPayment (ID) returns (PaymentInfo);
     rpc UpdatePayment (PaymentInfo) returns (Void);
+    rpc SearchByReservationID (ID) returns (PaymentInfo);
 }
 
 message PaymentDetails {

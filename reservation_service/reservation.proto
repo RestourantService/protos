@@ -9,7 +9,7 @@ service Reservation {
     rpc GetReservationByID (ID) returns (ReservationInfo);
     rpc UpdateReservation (ReservationInfo) returns (Void);
     rpc DeleteReservation (ID) returns (Void);
-    rpc ValidateReservation (ReservationDetails) returns (ID);
+    rpc ValidateReservation (ID) returns (Status);
     rpc Order (ReservationOrders) returns (ID);
     rpc Pay (ID) returns (Status);
     rpc FetchReservations (Filter) returns (Reservations);

@@ -17,14 +17,14 @@ service Reservation {
 
 message ReservationDetails {
     string user_id = 1;
-    string reservation_id = 2;
+    string restaurant_id = 2;
     string reservation_time = 3;
 }
 
 message ReservationInfo {
     string id = 1;
     string user_id = 2;
-    string reservation_id = 3;
+    string restaurant_id = 3;
     string reservation_time = 4;
     string status = 5;
 }
@@ -36,7 +36,7 @@ message ID {
 message Void {}
 
 message ReservationOrders {
-    string reservation_id = 1;
+    string restaurant_id = 1;
     string menu_item_id = 2;
     int32 quantity = 3;
 }

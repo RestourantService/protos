@@ -5,7 +5,7 @@ option go_package = "genproto/payment";
 package payment;
 
 service Payment {
-    rpc MakePayment (PaymentDetails) returns (Status);
+    rpc CreatePayment (PaymentDetails) returns (Status);
     rpc GetPayment (ID) returns (PaymentInfo);
     rpc UpdatePayment (PaymentInfo) returns (Void);
     rpc SearchByReservationID (ID) returns (PaymentInfo);

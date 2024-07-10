@@ -33,19 +33,19 @@ message UserInfo {
 }
 
 message LoginResponse{
-    AccesToken access=1;
+    AccessToken access=1;
     RefreshToken refresh=2;
 }
 
-message AccesToken{
+message AccessToken{
     string id = 1;
     string username = 2;
     string email = 3;
-    string token = 4;
+    string accesstoken = 4;
 }
 message RefreshToken{
     string userid = 1;
-    string token = 2;
+    string refreshtoken = 2;
 }
 
 

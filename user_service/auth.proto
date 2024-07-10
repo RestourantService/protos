@@ -7,8 +7,6 @@ package authentication;
 service Authentication {
     rpc Register (UserDetails) returns (ID);
     rpc Login (LoginRequest) returns (ID);
-    rpc Logout (LogoutRequest) returns (Void);
-    rpc RefreshToken (TokenRequest) returns (Void);
 }
 
 message UserDetails {
@@ -17,30 +15,11 @@ message UserDetails {
     string password = 3;
 }
 
-message UserInfo {
-    string id = 1;
-    string username = 2;
-    string email = 3;
-    string password = 4;
-}
-
 message LoginRequest {
     string username = 1;
     string password = 2;
 }
 
-message LogoutRequest {
-    string username = 1;
-}
-
-message TokenRequest {
-    string user_id = 1;
-    string token = 2; 
-    int64 expiresAt = 3;
-}
-
 message ID {
     string id = 1;
 }
-
-message Void {}

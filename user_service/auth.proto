@@ -6,7 +6,7 @@ package authentication;
 
 service Authentication {
     rpc Register (UserDetails) returns (ID);
-    rpc Login (LoginRequest) returns (AccesToken);
+    rpc Login (LoginRequest) returns (LoginResponse);
     rpc CheckRefreshToken (CheckRefreshTokenRequest) returns (CheckRefreshTokenResponse);
 }
 
@@ -32,12 +32,24 @@ message UserInfo {
     string password = 4;
 }
 
+message LoginResponse{
+    AccesToken access=1;
+    RefreshToken refresh=2;
+}
+
 message AccesToken{
     string id = 1;
     string username = 2;
     string email = 3;
     string token = 4;
 }
+message RefreshToken{
+    string id = 1;
+    string userid = 2;
+    string token = 3;
+}
+
+
 message CheckRefreshTokenRequest{
     string username=1;
 }

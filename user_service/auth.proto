@@ -44,9 +44,8 @@ message AccesToken{
     string token = 4;
 }
 message RefreshToken{
-    string id = 1;
-    string userid = 2;
-    string token = 3;
+    string userid = 1;
+    string token = 2;
 }
 
 

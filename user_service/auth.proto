@@ -54,5 +54,6 @@ message CheckRefreshTokenRequest{
 }
 message CheckRefreshTokenResponse{
     bool acces=1;
+    string accestoken=2;
 }
 

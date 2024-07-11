@@ -35,10 +35,14 @@ message ID {
 
 message Void {}
 
+message ReservationOrder {
+    string menu_item_id = 1;
+    int32 quantity = 2;
+}
+
 message ReservationOrders {
     string id = 1;
-    string menu_item_id = 2;
-    int32 quantity = 3;
+    repeated ReservationOrder order = 2;
 }
 
 message Status {

@@ -13,6 +13,7 @@ service Reservation {
     rpc Order (ReservationOrders) returns (ID);
     rpc Pay (ID) returns (Status);
     rpc FetchReservations (Filter) returns (Reservations);
+    rpc DeleteReservationByUserID (ID) returns (Status);
 }
 
 message ReservationDetails {

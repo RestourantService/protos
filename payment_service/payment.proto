@@ -34,3 +34,10 @@ message ID {
 }
 
 message Void {}
+
+message PaymentInsert {
+    string reservation_id = 1;
+    float amount = 2;
+    string payment_method = 3;
+    string payment_status = 4;
+}

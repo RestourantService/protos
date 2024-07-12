@@ -46,6 +46,10 @@ message ReservationOrders {
     repeated ReservationOrder order = 2;
 }
 
+message Orders {
+    repeated ReservationOrder order = 1;
+}
+
 message Status {
     bool successful = 1;
 }

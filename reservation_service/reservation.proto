@@ -10,7 +10,7 @@ service Reservation {
     rpc UpdateReservation (ReservationInfo) returns (Void);
     rpc DeleteReservation (ID) returns (Void);
     rpc ValidateReservation (ID) returns (Status);
-    rpc Order (ReservationOrders) returns (ID);
+    rpc Order (ReservationOrder) returns (ID);
     rpc Pay (ID) returns (Status);
     rpc FetchReservations (Filter) returns (Reservations);
     rpc DeleteReservationByUserID (ID) returns (Status);
@@ -37,17 +37,9 @@ message ID {
 message Void {}
 
 message ReservationOrder {
-    string menu_item_id = 1;
-    int32 quantity = 2;
-}
-
-message ReservationOrders {
     string id = 1;
-    repeated ReservationOrder order = 2;
-}
-
-message Orders {
-    repeated ReservationOrder order = 1;
+    string menu_item_id = 2;
+    int32 quantity = 3;
 }
 
 message Status {

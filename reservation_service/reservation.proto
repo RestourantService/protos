@@ -60,3 +60,10 @@ message Filter {
 message Reservations {
     repeated ReservationInfo reservations = 1;
 }
+
+message ReservationInsert {
+    string user_id = 1;
+    string restaurant_id = 2;
+    string reservation_time = 3;
+    string status = 4;
+}
